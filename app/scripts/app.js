@@ -7,7 +7,8 @@ var app = angular.module('angNewsApp', [
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'firebase'
   ]);
 
 app.config(function ($routeProvider) {
@@ -16,11 +17,12 @@ app.config(function ($routeProvider) {
       templateUrl: 'views/posts.html',
       controller: 'PostsCtrl'
     })
-    .when('/about', {
-      templateUrl: 'views/about.html',
-      controller: 'AboutCtrl'
+    .when('/posts/:postId', {
+      templateUrl: 'views/showpost.html',
+      controller: 'PostViewCtrl'
     })
     .otherwise({
       redirectTo: '/'
     });
-});
+})
+.constant('FIREBASE_URL', 'https://vivid-fire-764.firebaseio.com/');
