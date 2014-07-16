@@ -12,6 +12,7 @@ angular.module('angNewsApp')
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
-      'Karma'
+      'Karma',
+      'Еще что-то'
     ];
   });
